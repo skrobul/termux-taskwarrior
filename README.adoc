@@ -15,6 +15,8 @@ Create widgets and [filename]`bin` directories:
     mkdir -p $HOME/.shortcuts/tasks
     mkdir -p $HOME/.local/bin
 
+    echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
+
 Clone the repo and install shell scripts and widgets:
 
 [source,bash]
