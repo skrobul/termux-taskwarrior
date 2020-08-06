@@ -18,4 +18,4 @@ while IFS== read -r key value; do
     taskArray["$key"]="$value"
 done < <(task $selected_tasks export | jq -r '.[] | to_entries | .[] | .key + "=" + (.value|tostring)')
 
-task $selected_tasks modify $(./build-task) 
+task $selected_tasks modify $(build-task) 
