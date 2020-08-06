@@ -2,8 +2,6 @@
 
 description=$(termux-dialog text -t "Task Description" | jq -r .text)
 
-echo $description
-
 date=$(termux-dialog date -t "Task Due" -d "YYY-MM-dd")
 
 time=$(termux-dialog time -t "Time of Task Due")
@@ -13,7 +11,7 @@ if [[ $(echo $date | jq -r .code) -gt -2 ]] ; then
 fi
 
 if [[ $(echo $time | jq -r .code) -gt -2 ]] ; then
-	duetime="$(echo $time | jq -r .text) rc.dateformat:Y-M-DTH:N:S""
+	duetime="$(echo $time | jq -r .text) rc.dateformat:Y-M-DH:N"
 fi
 
 echo "$description $duedate$duetime" 
