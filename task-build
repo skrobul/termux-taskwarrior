@@ -4,9 +4,9 @@ description=$(termux-dialog text -t "Task Description" | jq -r .text)
 
 echo $description
 
-date=$(./termux-dialog date -t "Task Due" -d "YYY-MM-dd")
+date=$(termux-dialog date -t "Task Due" -d "YYY-MM-dd")
 
-time=$(./termux-dialog time -t "Time of Task Due")
+time=$(termux-dialog time -t "Time of Task Due")
 
 if [[ $(echo $date | jq -r .code) -gt -2 ]] ; then
 	duedate="due:$(echo $date | jq -r .text)"
