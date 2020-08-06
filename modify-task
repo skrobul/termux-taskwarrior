@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+source $HOME/.bashrc
+
 if [ $1 -n ]; then
 	selection=$(termux-dialog checkbox -v "$(task status:pending export | jq -r '.[] | "\(.id) \(.description),"')")
     if  [ `echo $selection | jq -r '.code'` -lt -1 ]; then
