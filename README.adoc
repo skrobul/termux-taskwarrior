@@ -1,0 +1,26 @@
+= Termux Taskwarrior
+
+A set of scripts to work with https://taskwarrior.org/[Taskwarrior] using the
+https://wiki.termux.com/wiki/Termux:API[Termux: API] and
+https://wiki.termux.com/wiki/Termux:Widget[Termux:Widget] tools.
+
+== Install dependencies
+
+Install dependencies:
+
+    pkg install jq task termux-api
+
+Create widgets and [filename]`bin` directories:
+
+    mkdir -p $HOME/.shortcuts/tasks
+    mkdir -p $HOME/.local/bin
+
+Clone the repo and install shell scripts and widgets:
+
+[source,bash]
+----
+git clone https://github.com/garyedwards/termux-taskwarrior.git
+
+cp termux-taskwarrior/task-build $HOME/.local/bin/
+cp termux-taskwarrior/{*-task*,task-popup} $HOME/.shortcuts/tasks/
+----
