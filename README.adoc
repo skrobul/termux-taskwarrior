@@ -8,13 +8,7 @@ https://wiki.termux.com/wiki/Termux:Widget[Termux:Widget] tools.
 
 Install dependencies:
 
-    pkg install jq task termux-api
-
-Create widgets and [filename]`bin` directories:
-
-    mkdir -p $HOME/.shortcuts/tasks
-    mkdir -p $HOME/.local/bin
-
+    pkg install jq task termux-api tasksh
     echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
 
 Clone the repo and install shell scripts and widgets:
@@ -23,6 +17,6 @@ Clone the repo and install shell scripts and widgets:
 ----
 git clone https://github.com/garyedwards/termux-taskwarrior.git
 
-cp termux-taskwarrior/task-build $HOME/.local/bin/
-cp termux-taskwarrior/{*-task*,task-popup} $HOME/.shortcuts/tasks/
+cp -a termux-taskwarrior/shortcuts $HOME/.shortcuts
+cp -a termux-taskwarrior/local $HOME/.local
 ----
