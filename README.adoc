@@ -17,6 +17,6 @@ Clone the repo and install shell scripts and widgets:
 ----
 git clone https://github.com/garyedwards/termux-taskwarrior.git
 
-cp -a termux-taskwarrior/shortcuts $HOME/.shortcuts
-cp -a termux-taskwarrior/local $HOME/.local
+cp -aT termux-taskwarrior/shortcuts $HOME/.shortcuts
+cp -aT termux-taskwarrior/local $HOME/.local
 ----
