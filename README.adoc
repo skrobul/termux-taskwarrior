@@ -8,7 +8,7 @@ https://wiki.termux.com/wiki/Termux:Widget[Termux:Widget] tools.
 
 Install dependencies:
 
-    pkg install jq task termux-api tasksh
+    pkg install git jq taskwarrior termux-api tasksh
     echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
 
 Clone the repo and install shell scripts and widgets:
