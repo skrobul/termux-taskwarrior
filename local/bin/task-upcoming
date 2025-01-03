@@ -1,0 +1,10 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+CUTOFF="10h"
+task rc.context=none status:pending tags.hasnt:notified due.before:now+$CUTOFF     export |
+jq -r ".[].description" |
+while IFS= read -r line  
+do
+   termux-notification --sound -t "Task due in less than $CUTOFF" -c "$line"
+done
+task rc.context=none status:pending tags.hasnt:notified due.before:now+$CUTOFF modify +notified

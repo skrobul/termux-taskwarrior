@@ -8,15 +8,26 @@ https://wiki.termux.com/wiki/Termux:Widget[Termux:Widget] tools.
 
 Install dependencies:
 
-    pkg install git jq taskwarrior termux-api tasksh
+    pkg install git jq taskwarrior termux-api tasksh termux-services cronie
     echo 'export PATH=$PATH:$HOME/.local/bin' >> ~/.bashrc
 
 Clone the repo and install shell scripts and widgets:
 
 [source,bash]
 ----
-git clone https://github.com/garyedwards/termux-taskwarrior.git
+git clone https://github.com/skrobul/termux-taskwarrior.git
 
 cp -aT termux-taskwarrior/shortcuts $HOME/.shortcuts
 cp -aT termux-taskwarrior/local $HOME/.local
+----
+
+
+Start the crontab for notifications
+
+----
+sv-enable crond
+
+# add following after the `crontab -e`
+*/5 * * * * /data/data/com.termux/files/home/termux-taskwarrior/local/bin/task-upcoming &>/dev/null
+*/10 * * * * /data/data/com.termux/files/usr/bin/task sync &>/dev/null
 ----
