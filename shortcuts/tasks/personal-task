@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+task add due:tomorrow tag:personal $(termux-dialog text -t "Task Description" | jq -r .text)
